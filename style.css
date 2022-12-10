@@ -12,3 +12,14 @@ button {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+.output-heading {
+  text-align: center;
+  margin: 3%;
+}
+.output {
+  width: 80%;
+  margin: 1% auto;
+  padding: 1rem;
+  border: 1px solid black;
+  height: 10vh;
+}

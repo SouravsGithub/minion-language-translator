@@ -1,12 +1,8 @@
 const btn = document.querySelector("button");
-let textInput = document.querySelector("#text-input");
+const textInput = document.querySelector("#text-input");
+const outputDiv = document.querySelector(".output");
 
 function clickEventHandler() {
   console.log(textInput.value);
+  outputDiv.innerText = "ajajajajajaja " + textInput.value;
 }
-
-// Exercise time
-document.querySelector("#text-input");
-document.querySelector(".btn-primary");
-document.querySelector("#input-btn");
-document.querySelector("[name=translator]");
