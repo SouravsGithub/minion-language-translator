@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+#text-input {
+  width: 80%;
+  display: block;
+  margin: 5% auto;
+  height: 10vh;
+  padding: 1rem;
+}
+button {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
