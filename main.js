@@ -20,5 +20,6 @@ function getTranslation() {
     })
     .catch((error) => {
       console.log("error occured: " + error);
+      alert("something went wrong with the server! try after some time");
     });
 }
