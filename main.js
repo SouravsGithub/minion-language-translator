@@ -9,7 +9,8 @@ function urlConstructor(text) {
   return url + "?" + "text=" + text;
 }
 function getTranslation() {
-  fetch(urlConstructor(textInput.value))
+  const inputText = textInput.value;
+  fetch(urlConstructor(inputText))
     .then((response) => {
       return response.json();
     })
