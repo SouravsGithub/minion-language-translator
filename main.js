@@ -14,8 +14,8 @@ function getTranslation() {
       return response.json();
     })
     .then((json) => {
-      console.log(json);
-      outputDiv.innerText = json.contents.translated;
+      const translatedText = json.contents.translated;
+      outputDiv.innerText = translatedText;
     })
     .catch((error) => {
       console.log("error occured: " + error);
