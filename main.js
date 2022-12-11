@@ -3,7 +3,7 @@ const textInput = document.querySelector("#text-input");
 const outputDiv = document.querySelector(".output");
 
 btn.addEventListener("click", getTranslation);
-const url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+const url = "https://api.funtranslations.com/translate/pirate.json";
 
 function urlConstructor(text) {
   return url + "?" + "text=" + text;
@@ -14,6 +14,7 @@ function getTranslation() {
       return response.json();
     })
     .then((json) => {
+      console.log(json);
       outputDiv.innerText = json.contents.translated;
     })
     .catch((error) => {
