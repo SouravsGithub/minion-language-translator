@@ -1,34 +1,31 @@
-// references to html elements
-const btn = document.querySelector("button");
+const button = document.querySelector("button");
 const textInput = document.querySelector("#text-input");
-const outputDiv = document.querySelector(".output");
+const textOutput = document.querySelector(".output");
 
-// event listener on the button to listen to click event and fire the getTranslation function
-btn.addEventListener("click", getTranslation);
-const url = "https://api.funtranslations.com/translate/pirate.json";
+button.addEventListener("click", translate);
 
-// function to construct the URL with the correct value
-function urlConstructor(text) {
-  return url + "?" + "text=" + text;
-}
-// function to get the translated text from the mock server using the api endpoint and show the output
-function getTranslation() {
-  // taking input from the div
+function translate() {
+  // taking the input
   const inputText = textInput.value;
 
-  // calling server for processing
-  fetch(urlConstructor(inputText))
+  // processing
+  // making the correct url
+  function constructURL(text) {
+    let url = "https://api.funtranslations.com/translate/pirate.json";
+    return url + "?" + "text=" + text;
+  }
+  // getting the response
+  fetch(constructURL(inputText))
     .then((response) => {
       return response.json();
     })
-    .then((json) => {
-      const translatedText = json.contents.translated;
-
-      // showing the processed output in the output div
-      outputDiv.innerText = translatedText;
+    .then((jsonFile) => {
+      // output
+      // showing the translated text in the output box
+      textOutput.innerText = jsonFile.contents.translated;
     })
     .catch((error) => {
-      console.log("error occured: " + error);
-      alert("something went wrong with the server! try after some time");
+      // showing the error in the console
+      console.log("error : ", error);
     });
 }
