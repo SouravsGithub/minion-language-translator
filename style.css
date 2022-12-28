@@ -30,6 +30,7 @@ h1 {
   font-family: "Caveat Brush", cursive;
   font-size: 1.1rem;
   letter-spacing: 1px;
+  resize: none;
 }
 #text-input::placeholder {
   font-size: 1.1rem;
